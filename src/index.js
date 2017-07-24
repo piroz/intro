@@ -2,7 +2,7 @@ import "./index.scss";
 
 class Main {
     constructor() {
-        this.flag = localStorage.getItem("introFlag");
+        this.flag = sessionStorage.getItem("introFlag");
 
         if (window["intro_messages"] === undefined || !intro_messages instanceof Array) {
             window.intro_messages = ['Loading...'];
@@ -29,7 +29,7 @@ class Main {
     }
 
     remenber() {
-        localStorage.setItem("introFlag", true);
+        sessionStorage.setItem("introFlag", true);
     }
 
     splitMessage() {
