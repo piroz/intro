@@ -24,23 +24,39 @@ export class Loader {
     }
 
     /**
+     * skip parameter (?nointro=1)
+     * 
+     * @returns 
+     * @memberof Loader
+     */
+    isSkipIntro()
+    {
+        return location.search.match(/nointro=1/) !== null;
+    }
+
+    /**
      * setup dom onload events
      * 
      * @memberof Loader
      */
     setupEvents() {
         document.addEventListener("DOMContentLoaded", (ev) => {
-            if (!this.reminder.flag) {
-                this.start();
+
+            if (this.isSkipIntro() || this.reminder.flag) {
+                return;
             }
+
+            this.start();
         });
 
         window.addEventListener("load", (ev) => {
             this.restoreVisibility();
 
-            if (!this.reminder.flag) {
-                this.showSkip();
+            if (this.isSkipIntro() || this.reminder.flag) {
+                return;
             }
+
+            this.showSkip();
         });
     }
 
