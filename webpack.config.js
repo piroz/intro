@@ -13,16 +13,26 @@ module.exports = {
   },
   module: {
     rules: [
-        { test: /\.jsx?$/, loader: 'babel-loader' },
+        { test: /\.jsx?$/, use: [{
+            loader: "babel-loader",
+            options: {
+              presets: [
+                ['env', {'modules': false}]
+              ]
+            }
+          }
+        ]},
         {
           test: /\.css$/,
-          loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+          loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: {
+            loader: 'css-loader'
+          }})
         },
         {
           test: /\.scss$/,
           loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: [
-            "css-loader",
-            "sass-loader"
+            {loader: "css-loader"},
+            {loader: "sass-loader"}
           ]})
         }
     ]
