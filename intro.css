@@ -1,0 +1,112 @@
+body > * {
+  visibility: hidden; }
+
+body > #intro_loader {
+  visibility: visible; }
+@-webkit-keyframes intro_fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes intro_fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes intro_fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes intro_fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes intro_fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes intro_fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.intro-fade-disappear {
+  opacity: 1; }
+
+.intro-fade-disappear.intro-fade-disappear-active {
+  -webkit-animation: intro_fade-out;
+  -moz-animation: intro_fade-out;
+  animation: intro_fade-out;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 500ms;
+  -moz-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-direction: forwards;
+  -moz-animation-direction: forwards;
+  animation-direction: forwards;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  animation-iteration-count: 1; }
+
+#intro_loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9223372036854775807;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  font-size: 28px;
+  text-align: left; }
+  #intro_loader .intro-message-item .intro-message-item-char {
+    opacity: 0.01; }
+  #intro_loader .intro-message-item .intro-message-item-char.intro-message-item-char-active {
+    -webkit-animation: intro_fade-in;
+    -moz-animation: intro_fade-in;
+    animation: intro_fade-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 250ms;
+    -moz-animation-duration: 250ms;
+    animation-duration: 250ms;
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-direction: forwards;
+    -moz-animation-direction: forwards;
+    animation-direction: forwards;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    animation-iteration-count: 1; }
+  #intro_loader .skip {
+    position: absolute;
+    top: 80vh;
+    width: 100%;
+    text-align: center;
+    height: 1em;
+    display: block;
+    color: #fff; }
+    #intro_loader .skip:hover {
+      color: rgba(255, 255, 255, 0.8); }
